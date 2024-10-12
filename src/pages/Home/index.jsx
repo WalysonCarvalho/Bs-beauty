@@ -76,7 +76,7 @@ export function Home() {
             <img src={img2} alt="Formatura Beathriz" />
             <span>Sempre alegre e feliz em conquistar meus objetivos.</span>
           </div>
-          <div className="image-container">
+          <div id="img3"className="image-container">
             <img src={img3} alt="Beathriz estudando" />
             <span>Sempre buscando me aperfeiçoar através dos estudos!</span>
           </div>

@@ -2,15 +2,15 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  min-height: 100vh; 
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 25rem auto;
-  grid-template-rows: auto auto auto; 
+  grid-template-rows: auto auto auto;
   grid-template-areas:
     "brand header"
     "menu menu"
     "footer footer";
-  
+
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -24,7 +24,6 @@ export const Brand = styled.div`
   grid-column-start: 1;
   grid-column-end: 2;
 
- 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,7 +86,7 @@ export const Header = styled.header`
       }
 
       &.active {
-        animation: wipe-out-down 2.5s cubic-bezier(0.25, 0.5, 0.20, 0.5) both;
+        animation: wipe-out-down 2.5s cubic-bezier(0.25, 0.5, 0.2, 0.5) both;
       }
     }
   }
@@ -137,7 +136,7 @@ export const Menu = styled.div`
       align-items: center;
       justify-content: center;
       text-align: center;
-  }
+    }
 
     &::after {
       content: "";
@@ -148,12 +147,13 @@ export const Menu = styled.div`
       width: 50px;
       height: 3px;
       background-color: ${({ theme }) => theme.COLORS.PINK};
-      
     }
   }
 
-  >.container_button {
+  > .container_button {
     display: flex;
+    flex-wrap: wrap;
+
     gap: 3rem;
 
     > button {
@@ -170,7 +170,12 @@ export const Menu = styled.div`
   @media (max-width: 768px) {
     .procedure-image {
       flex-direction: column;
-      gap: 1rem; 
+      gap: 1rem;
+    }
+
+    .container_button {
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -183,7 +188,9 @@ export const Menu = styled.div`
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     opacity: ${({ fade }) => (fade ? 0 : 1)};
     transform: scale(${({ fade }) => (fade ? 0.2 : 1)});
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transition:
+      opacity 0.5s ease-in-out,
+      transform 0.5s ease-in-out;
   }
 
   > .benefits {
